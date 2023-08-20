@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MJ-Task</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="logo-link"
+				><img class="nav-logo" src="/img/mj-logo.png" alt="logo"
+			/></a>
+			<ul class="navigation-menu">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Run Information</a></li>
+				<li><a href="#">Registration</a></li>
+				<li><a href="#">Contact us</a></li>
+			</ul>
+		</header>
+		<main>
+			<section class="campaign">
+				<div class="campaign-header">
+					<img
+						class="campaign-header-logo"
+						src="/img/header.png"
+						alt="Campaign Header"
+					/>
+					<p class="campaign-description">
+						A 3K run alongside the candidates of Miss Philippines Earth 2015 to
+						aid the Calumpang River Rehabilitation
+					</p>
+				</div>
+				<div class="campaign-description">
+					<p class="campaign-event-details">
+						April 25, 2015 | Assembly Time: 5:00 am | SM City Batangas Parking
+						Grounds
+					</p>
+					<p class="campaign-registration">
+						Registration fee: Php500 inclusive of race kit with shirt
+					</p>
+				</div>
+				<button>Register now!</button>
+			</section>
+
+			<section class="registration-section">
+				<div class="registration">
+					<h1 class="registration-title">Sign up</h1>
+					<img src="/img/section-divider.png" alt="Section Divider" />
+					<p class="registration-description">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quod,
+						earum vel rerum sed necessitatibus perferendis sint saepe. Animi
+						pariatur officiis accusantium aliquam repellendus quisquam.
+					</p>
+
+					<form>
+						<div class="form-inputs">
+							<input
+								type="text"
+								id="firstName"
+								name="firstName"
+								placeholder="First Name"
+								required
+							/>
+
+							<input
+								type="text"
+								id="lastName"
+								name="lastName"
+								placeholder="Last Name"
+								required
+							/>
+
+							<input
+								class="address"
+								type="text"
+								id="address"
+								name="address"
+								placeholder="Complete Address"
+								required
+							/>
+
+							<input
+								type="text"
+								id="birthday"
+								name="birthday"
+								placeholder="Birthday"
+								required
+							/>
+
+							<input
+								type="text"
+								id="contactNumber"
+								name="contactNumber"
+								placeholder="Contact Number"
+								required
+							/>
+
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Email Address"
+								required
+							/>
+
+							<div class="select-container">
+								<select class="select-shirt" name="size" id="size">
+									<option value="">Shirt Size</option>
+									<option value="small">Small</option>
+									<option value="medium">Medium</option>
+									<option value="large">Large</option>
+								</select>
+								<img src="/img/dropdown.png" alt="Dropdown Icon" />
+							</div>
+						</div>
+
+						<div class="form-description">
+							<div class="add-participants">
+								<img class="add-icon" src="/img/add-icon.png" alt="Add Icon" />
+
+								<p>Add more participants</p>
+							</div>
+
+							<div class="terms">
+								<label>
+									<input type="checkbox" name="subscribe" value="yes" />
+									I have read and understand the terms and conditions
+								</label>
+							</div>
+						</div>
+
+						<button type="submit">Submit</button>
+					</form>
+					<div></div>
+				</div>
+			</section>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,167 @@
+.campaign {
+	background: url(/img/background.png);
+	background-position: 50% 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 35px;
+	text-align: center;
+
+	&-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 480px;
+		margin-bottom: -20px;
+
+		&-logo {
+			width: 480px;
+		}
+	}
+
+	&-description {
+		color: #414042;
+	}
+
+	&-event-details {
+		font-size: 18px;
+	}
+
+	button {
+		text-transform: capitalize;
+		background-color: transparent;
+		color: #0e76bc;
+		padding: 10px 15px;
+		border: 3px solid green;
+		transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		font-weight: bold;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #0e76bc;
+			color: #fff;
+			// border: none;
+			outline: none;
+		}
+	}
+}
+
+.registration-section {
+	background-color: #0e76bc;
+	color: #fff;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.registration {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&-title {
+			font-size: 30px;
+			text-transform: uppercase;
+		}
+
+		&-description {
+			margin-top: 25px;
+		}
+
+		form {
+			margin-top: 25px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+
+			.form-inputs {
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(4, 50px);
+				justify-content: center;
+				gap: 20px 14px;
+
+				input {
+					width: 100%;
+					font-size: 14px;
+					padding: 10px;
+					color: #0e76bc;
+					outline: none;
+
+					&::placeholder {
+						color: #0e76bc;
+					}
+				}
+
+				.address {
+					grid-column: 1 / -1;
+				}
+
+				.select-container {
+					display: flex;
+					justify-content: center;
+					position: relative;
+					height: 100%;
+					width: 100%;
+
+					.select-shirt {
+						font-size: 14px;
+						color: #0e76bc;
+						width: 100%;
+						border: none;
+						outline: none;
+						appearance: none;
+						padding: 0 15px;
+					}
+
+					img {
+						width: 50px;
+						height: 100%;
+						position: absolute;
+						right: 0;
+					}
+				}
+			}
+
+			.form-description {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				font-size: 14px;
+
+				.add-participants {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+
+					.add-icon {
+						height: 30px;
+						color: #0e76bc;
+					}
+				}
+			}
+
+			button {
+				align-self: flex-end;
+				border: none;
+				font-weight: bold;
+				font-size: 14px;
+				padding: 10px 15px;
+				color: #fff;
+				background-color: green;
+				text-transform: uppercase;
+				cursor: pointer;
+			}
+		}
+	}
+}

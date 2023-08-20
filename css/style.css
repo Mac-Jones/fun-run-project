@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 0rem;
+  color: #000; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 20px 50px; }
+  .header .logo-link {
+    position: relative; }
+    .header .logo-link .nav-logo {
+      height: 50px; }
+  .header .navigation-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .header .navigation-menu li {
+      position: relative;
+      list-style: none; }
+      .header .navigation-menu li a {
+        position: relative;
+        margin: 0 15px;
+        text-decoration: none;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: 0.6s; }
+        .header .navigation-menu li a:hover {
+          color: #0e76bc; }
+
+.campaign {
+  background: url(/img/background.png);
+  background-position: 50% 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  text-align: center; }
+  .campaign-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 480px;
+    margin-bottom: -20px; }
+    .campaign-header-logo {
+      width: 480px; }
+  .campaign-description {
+    color: #414042; }
+  .campaign-event-details {
+    font-size: 18px; }
+  .campaign button {
+    text-transform: capitalize;
+    background-color: transparent;
+    color: #0e76bc;
+    padding: 10px 15px;
+    border: 3px solid green;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    font-weight: bold;
+    cursor: pointer; }
+    .campaign button:hover {
+      background-color: #0e76bc;
+      color: #fff;
+      outline: none; }
+
+.registration-section {
+  background-color: #0e76bc;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .registration-section .registration {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .registration-section .registration-title {
+      font-size: 30px;
+      text-transform: uppercase; }
+    .registration-section .registration-description {
+      margin-top: 25px; }
+    .registration-section .registration form {
+      margin-top: 25px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; }
+      .registration-section .registration form .form-inputs {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 50px);
+        justify-content: center;
+        gap: 20px 14px; }
+        .registration-section .registration form .form-inputs input {
+          width: 100%;
+          font-size: 14px;
+          padding: 10px;
+          color: #0e76bc;
+          outline: none; }
+          .registration-section .registration form .form-inputs input::placeholder {
+            color: #0e76bc; }
+        .registration-section .registration form .form-inputs .address {
+          grid-column: 1 / -1; }
+        .registration-section .registration form .form-inputs .select-container {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          height: 100%;
+          width: 100%; }
+          .registration-section .registration form .form-inputs .select-container .select-shirt {
+            font-size: 14px;
+            color: #0e76bc;
+            width: 100%;
+            border: none;
+            outline: none;
+            appearance: none;
+            padding: 0 15px; }
+          .registration-section .registration form .form-inputs .select-container img {
+            width: 50px;
+            height: 100%;
+            position: absolute;
+            right: 0; }
+      .registration-section .registration form .form-description {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 14px; }
+        .registration-section .registration form .form-description .add-participants {
+          display: flex;
+          align-items: center;
+          gap: 5px; }
+          .registration-section .registration form .form-description .add-participants .add-icon {
+            height: 30px;
+            color: #0e76bc; }
+      .registration-section .registration form button {
+        align-self: flex-end;
+        border: none;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px 15px;
+        color: #fff;
+        background-color: green;
+        text-transform: uppercase;
+        cursor: pointer; }
