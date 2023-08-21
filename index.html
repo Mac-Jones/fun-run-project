@@ -17,13 +17,21 @@
 			<a href="#" class="logo-link"
 				><img class="nav-logo" src="/img/mj-logo.png" alt="logo"
 			/></a>
+
+			<div class="menu-icon" id="mobile-menu-icon">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+
 			<ul class="navigation-menu">
-				<!-- <li><a href="#">Home</a></li> -->
-				<li><a href="#">Run Information</a></li>
-				<li><a href="#">Registration</a></li>
-				<li><a href="#">Contact us</a></li>
+				<li><a href="#none" class="active">Home</a></li>
+				<li><a href="#none">Run Information</a></li>
+				<li><a href="#registration-section">Registration</a></li>
+				<li><a href="#none">Contact us</a></li>
 			</ul>
 		</header>
+
 		<main>
 			<section class="campaign">
 				<div class="campaign-header">
@@ -49,7 +57,7 @@
 				<button>Register now!</button>
 			</section>
 
-			<section class="registration-section">
+			<section class="registration-section" id="registration-section">
 				<div class="registration">
 					<h1 class="registration-title">Sign up</h1>
 					<img src="/img/section-divider.png" alt="Section Divider" />
@@ -130,7 +138,12 @@
 
 							<div class="terms">
 								<label>
-									<input type="checkbox" name="subscribe" value="yes" />
+									<input
+										type="checkbox"
+										name="subscribe"
+										value="yes"
+										required
+									/>
 									I have read and understand the terms and conditions
 								</label>
 							</div>

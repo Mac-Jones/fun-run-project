@@ -26,9 +26,10 @@ body {
   transition: 0.6s;
   padding: 20px 50px; }
   .header .logo-link {
-    position: relative; }
+    position: relative;
+    height: 50px; }
     .header .logo-link .nav-logo {
-      height: 50px; }
+      height: 100%; }
   .header .navigation-menu {
     position: relative;
     display: flex;
@@ -36,7 +37,8 @@ body {
     align-items: center; }
     .header .navigation-menu li {
       position: relative;
-      list-style: none; }
+      list-style: none;
+      text-align: center; }
       .header .navigation-menu li a {
         position: relative;
         margin: 0 15px;
@@ -45,8 +47,76 @@ body {
         text-transform: uppercase;
         font-weight: bold;
         transition: 0.6s; }
+        .header .navigation-menu li a.active {
+          color: #0e76bc; }
         .header .navigation-menu li a:hover {
           color: #0e76bc; }
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  display: none; }
+
+@media screen and (max-width: 870px) {
+  .header {
+    padding: 15px 30px; }
+    .header .navigation-menu li {
+      font-size: 13px; }
+    .header .logo-link {
+      height: 40px; } }
+
+@media screen and (max-width: 700px) {
+  .header {
+    padding: 15px 25px; }
+    .header .navigation-menu li {
+      font-size: 11px; } }
+
+@media screen and (max-width: 400px) {
+  .header {
+    position: fixed;
+    padding: 15px;
+    justify-content: space-between; }
+    .header .navigation-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      background-color: #0e76bc;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      display: none; }
+      .header .navigation-menu li {
+        font-size: 20px; }
+        .header .navigation-menu li a {
+          color: #fff;
+          padding: 15px 25px; }
+          .header .navigation-menu li a.active {
+            color: #fff; }
+          .header .navigation-menu li a:hover {
+            color: #0e76bc;
+            background-color: #fff; }
+    .header .logo-link {
+      height: 30px; }
+    .header .menu-icon {
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      display: block; }
+    .header .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px 0;
+      display: block; } }
 
 .campaign {
   background: url(/img/background.png);
@@ -54,6 +124,7 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,11 +157,29 @@ body {
       color: #fff;
       outline: none; }
 
+@media screen and (max-width: 870px) {
+  .campaign {
+    gap: 30px; }
+    .campaign-header {
+      width: 90%;
+      margin-bottom: -20px; }
+      .campaign-header-logo {
+        width: 100%; }
+    .campaign-description {
+      color: #414042;
+      font-size: 11px;
+      width: 95%; }
+    .campaign-event-details {
+      font-size: 12px; }
+    .campaign button {
+      padding: 8px 12px;
+      border: 2px solid green; } }
+
 .registration-section {
   background-color: #0e76bc;
   color: #fff;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center; }
