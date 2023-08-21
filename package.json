@@ -2,15 +2,17 @@
 	"name": "challenge",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
-		"compile:sass": "node-sass sass/main.scss css/style.css -w"
+		"compile:sass": "node-sass sass/main.scss css/style.css -w",
+		"start": "parcel index.html",
+		"build": "parcel build index.html"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"node-sass": "^9.0.0"
+		"node-sass": "^9.0.0",
+		"parcel-bundler": "^1.12.5"
 	},
 	"dependencies": {
 		"sass": "^1.66.1"
