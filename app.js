@@ -1,7 +1,23 @@
 const menuIcon = document.querySelector('.menu-icon');
+const closeIcon = document.querySelector('.close-icon');
+const homeIcon = document.querySelector('.home-icon');
+const registrationIcon = document.querySelector('.registration-icon');
+
 const navigationMenu = document.querySelector('.navigation-menu');
 
 menuIcon.addEventListener('click', () => {
+	navigationMenu.classList.toggle('active');
+});
+
+closeIcon.addEventListener('click', () => {
+	navigationMenu.classList.toggle('active');
+});
+
+homeIcon.addEventListener('click', () => {
+	navigationMenu.classList.toggle('active');
+});
+
+registrationIcon.addEventListener('click', () => {
 	navigationMenu.classList.toggle('active');
 });
 
