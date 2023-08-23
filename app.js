@@ -1,6 +1,4 @@
-const myName = 'Mac Jones';
-const validName = myName.trim().split(' ');
-console.log(validName.length <= 2);
+import { validateForm } from './validateForm.js';
 
 const menuIcon = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon');
@@ -24,7 +22,7 @@ const submitForm = (e) => {
 
 	const firstName = document.getElementById('firstName').value;
 	const lastName = document.getElementById('lastName').value;
-	const gender = document.getElementById('gender').value; // Make sure to use the correct ID
+	const gender = document.getElementById('gender').value;
 	const shirtSize = document.getElementById('shirtSize').value;
 	const birthday = document.getElementById('birthday').value;
 
@@ -38,12 +36,7 @@ const submitForm = (e) => {
       <hr />
       <p>You have successfully registered to the event.</p>
 			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod porro
-				ducimus hic quas, cum obcaecati nam a quia quos quis placeat
-				doloremque, assumenda reiciendis fuga fugiat at ad cupiditate vitae
-				aperiam odit in saepe molestiae. Quis cum ducimus debitis voluptatibus
-				quibusdam, unde, veritatis deleniti soluta odio reprehenderit ipsa
-				placeat voluptatem nemo cupiditate illum adipisci fugit, voluptate a
+				Awesome job! 🎉 Your form for the Fun Run event is submitted and confirmed. Get ready to lace up and join the excitement! 🏃‍♂️🏃‍♀️ Your journey towards the finish line starts here. Train well and stay tuned for updates. Your enthusiasm is truly commendable – see you on race day! 🥳🏁 #FunRunSuccess voluptatem nemo cupiditate illum adipisci fugit, voluptate a
 				magni obcaecati vel doloremque? Recusandae quam eum quasi? Molestiae
 				soluta necessitatibus possimus qui magni non, doloremque nesciunt! Qui
 				quaerat non sunt, impedit, alias, aut labore magnam fuga facere id
@@ -75,100 +68,30 @@ const submitForm = (e) => {
     </div>
   `;
 
-	// Update modal content with data
 	const modal = document.getElementById('myModal');
 	modal.innerHTML = modalContent;
-	// modal.style.display = 'block';
 	modal.classList.add('modal-active');
 
-	// Clear form fields
 	e.target.reset();
-	console.log(e.target);
 };
 
 function calculateAge(birthday) {
-	// ... (rest of the code)
+	const birthDate = new Date(birthday);
+	const currentDate = new Date();
+
+	const yearDiff = currentDate.getFullYear() - birthDate.getFullYear();
+	const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+	const dayDiff = currentDate.getDate() - birthDate.getDate();
+
+	// Adjust age based on month and day difference
+	let age = yearDiff;
+	if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+		age--;
+	}
+
+	return age;
 }
 
-function validateForm() {
-	const firstName = document.getElementById('firstName').value;
-	const lastName = document.getElementById('lastName').value;
-	const address = document.getElementById('address').value;
-	const email = document.getElementById('email').value;
-	const gender = document.getElementById('gender').value; // Make sure to use the correct ID
-	console.log(gender);
-	const shirtSize = document.getElementById('shirtSize').value;
-	const birthday = document.getElementById('birthday').value;
-	const termsCheckbox = document.querySelector(
-		'input[name="subscribe"]:checked'
-	);
-
-	// 	const myName = 'Mac Jones';
-	// const validName = myName.trim().split(' ');
-	// console.log(validName.length <= 2);
-
-	const validName = (name) => {
-		return name.trim().split(' ').length <= 2;
-	};
-
-	// Perform your form validation checks
-	if (!validName(firstName)) {
-		alert('First Name should have 1 or 2 characters');
-		return false;
-	}
-
-	if (!validName(lastName)) {
-		alert('First Name should have 1 or 2 characters');
-		return false;
-	}
-
-	if (address === '') {
-		alert('Address is required.');
-		return false;
-	}
-
-	if (email === '') {
-		alert('Email Address is required.');
-		return false;
-	}
-
-	if (gender === '') {
-		alert('Gender is required.');
-		return false;
-	}
-
-	if (shirtSize === '') {
-		alert('Shirt Size is required.');
-		return false;
-	}
-
-	if (birthday === '') {
-		alert('Birthday is required.');
-		return false;
-	}
-
-	if (!termsCheckbox) {
-		alert('You must agree to the terms and conditions.');
-		return false;
-	}
-
-	return true;
-}
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 // For the Icon
 menuIcon.addEventListener('click', () => {
 	navigationMenu.classList.toggle('active');
