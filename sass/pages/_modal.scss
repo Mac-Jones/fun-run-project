@@ -1,0 +1,89 @@
+.modal {
+	position: fixed;
+	z-index: 100000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	// overflow: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 100;
+	font-size: 14px;
+	display: none;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+
+	.modal-content {
+		background-color: #fefefe;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+		max-width: 1000px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+
+		.close {
+			color: #aaa;
+			font-size: 30px;
+			font-weight: bold;
+			position: absolute;
+			top: 0;
+			right: 20px;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.modal-data {
+			margin-top: 20px;
+
+			.title.description {
+				margin-bottom: 20px;
+				display: flex;
+				justify-content: space-between;
+			}
+			//
+			.dataTable {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 14px;
+
+				thead tr {
+					&:last-child {
+						border-bottom: 1px solid black;
+					}
+
+					th {
+						padding: 8px;
+						text-align: left;
+					}
+				}
+
+				tbody td {
+					padding: 8px;
+				}
+			}
+		}
+	}
+}
+
+.modal-active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

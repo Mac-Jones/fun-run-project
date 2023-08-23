@@ -220,37 +220,38 @@ body {
       text-transform: uppercase; }
     .registration-section .registration-description {
       margin-top: 25px; }
-    .registration-section .registration form {
+    .registration-section .registration .form {
       margin-top: 25px;
       width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px; }
-      .registration-section .registration form .form-inputs {
+      .registration-section .registration .form .form-inputs {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 50px);
         justify-content: center;
         gap: 20px 14px; }
-        .registration-section .registration form .form-inputs input {
+        .registration-section .registration .form .form-inputs input {
           width: 100%;
           font-size: 14px;
           padding: 10px;
           color: #0e76bc;
           outline: none; }
-          .registration-section .registration form .form-inputs input::placeholder {
+          .registration-section .registration .form .form-inputs input::placeholder {
             color: #0e76bc; }
-        .registration-section .registration form .form-inputs .address {
+        .registration-section .registration .form .form-inputs .address {
           grid-column: 1 / -1; }
-        .registration-section .registration form .form-inputs .select-container {
+        .registration-section .registration .form .form-inputs .select-container {
           display: flex;
           justify-content: center;
           position: relative;
           height: 100%;
           width: 100%; }
-          .registration-section .registration form .form-inputs .select-container .select-shirt {
+          .registration-section .registration .form .form-inputs .select-container .select-shirt {
             font-size: 14px;
             color: #0e76bc;
             width: 100%;
@@ -258,24 +259,24 @@ body {
             outline: none;
             appearance: none;
             padding: 0 15px; }
-          .registration-section .registration form .form-inputs .select-container img {
+          .registration-section .registration .form .form-inputs .select-container img {
             width: 50px;
             height: 100%;
             position: absolute;
             right: 0; }
-      .registration-section .registration form .form-description {
+      .registration-section .registration .form .form-description {
         display: flex;
         justify-content: space-between;
         width: 100%;
         font-size: 14px; }
-        .registration-section .registration form .form-description .add-participants {
+        .registration-section .registration .form .form-description .add-participants {
           display: flex;
           align-items: center;
           gap: 5px; }
-          .registration-section .registration form .form-description .add-participants .add-icon {
+          .registration-section .registration .form .form-description .add-participants .add-icon {
             height: 30px;
             color: #0e76bc; }
-      .registration-section .registration form button {
+      .registration-section .registration .form button {
         align-self: flex-end;
         border: none;
         font-weight: bold;
@@ -285,3 +286,118 @@ body {
         background-color: green;
         text-transform: uppercase;
         cursor: pointer; }
+
+@media screen and (max-width: 400px) {
+  .registration-section {
+    font-size: 11px; }
+    .registration-section .registration {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .registration-section .registration-title {
+        font-size: 25px;
+        text-transform: uppercase; }
+      .registration-section .registration-description {
+        margin-top: 10px; }
+      .registration-section .registration .form {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; }
+        .registration-section .registration .form .form-inputs {
+          height: 60%;
+          grid-template-rows: repeat(5, 30px);
+          gap: 15px 13px; }
+          .registration-section .registration .form .form-inputs input {
+            font-size: 12px;
+            padding: 5px; }
+          .registration-section .registration .form .form-inputs .select-container .select-shirt {
+            font-size: 12px; }
+          .registration-section .registration .form .form-inputs .select-container img {
+            width: 25px; }
+        .registration-section .registration .form .form-description {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 100%;
+          font-size: 12px; }
+          .registration-section .registration .form .form-description .add-participants .add-icon {
+            height: 20px; }
+        .registration-section .registration .form button {
+          align-self: flex-end;
+          border: none;
+          font-weight: bold;
+          font-size: 12px;
+          padding: 8px 12px;
+          color: #fff;
+          background-color: green;
+          text-transform: uppercase;
+          cursor: pointer; } }
+
+.label {
+  height: 100%;
+  color: #fff; }
+
+.modal {
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  font-size: 14px;
+  display: none; }
+  .modal .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1000px;
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .modal .modal-content h2 {
+      margin-bottom: 10px;
+      font-size: 30px; }
+    .modal .modal-content p {
+      margin-top: 10px; }
+    .modal .modal-content .close {
+      color: #aaa;
+      font-size: 30px;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      right: 20px; }
+    .modal .modal-content .close:hover,
+    .modal .modal-content .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer; }
+    .modal .modal-content .modal-data {
+      margin-top: 20px; }
+      .modal .modal-content .modal-data .title.description {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between; }
+      .modal .modal-content .modal-data .dataTable {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px; }
+        .modal .modal-content .modal-data .dataTable thead tr:last-child {
+          border-bottom: 1px solid black; }
+        .modal .modal-content .modal-data .dataTable thead tr th {
+          padding: 8px;
+          text-align: left; }
+        .modal .modal-content .modal-data .dataTable tbody td {
+          padding: 8px; }
+
+.modal-active {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
