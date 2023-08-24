@@ -15,7 +15,6 @@ export function validateForm() {
 		return name.trim().split(' ').length <= 2;
 	};
 
-	// Perform your form validation checks
 	if (!validName(firstName)) {
 		alert('First Name should have 1 or 2 characters');
 		return false;

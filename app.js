@@ -1,4 +1,5 @@
-import { validateForm } from './validateForm.js';
+import { validateForm } from './js/validateForm.js';
+import { addParticipants } from './js/registeredList.js';
 
 const menuIcon = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon');
@@ -6,6 +7,9 @@ const homeIcon = document.querySelector('.home-icon');
 const registrationIcon = document.querySelector('.registration-icon');
 
 const navigationMenu = document.querySelector('.navigation-menu');
+
+console.log(JSON.parse(localStorage.getItem('participants')));
+// localStorage.removeItem('participants');
 
 // Form functionality
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,8 +30,27 @@ const submitForm = (e) => {
 	const shirtSize = document.getElementById('shirtSize').value;
 	const birthday = document.getElementById('birthday').value;
 
+	const address = document.getElementById('address').value;
+	const email = document.getElementById('email').value;
+	const contactNumber = document.getElementById('contactNumber').value;
+
 	const age = calculateAge(birthday);
 	const raceCategory = age <= 18 ? 'Junior' : 'Senior';
+
+	console.log(`${firstName} ${lastName}`);
+	console.log(age);
+
+	const participant = {
+		name: `${firstName} ${lastName}`,
+		age,
+		gender,
+		address,
+		email,
+		contactNumber,
+		date: new Date(),
+	};
+
+	addParticipants(participant);
 
 	const modalContent = `
     <div class="modal-content">
@@ -65,15 +88,70 @@ const submitForm = (e) => {
           </tbody>
         </table>
       </div>
+			<button id="dashboardButton" class="dashboardButton">
+				Go to Dashboard
+			</button>
     </div>
   `;
 
 	const modal = document.getElementById('myModal');
+
 	modal.innerHTML = modalContent;
-	modal.classList.add('modal-active');
+	modal.classList.toggle('modal-active');
+
+	// Close btn for modal
+	const closeBtn = document.querySelector('.close');
+	closeBtn.addEventListener('click', () => {
+		modal.classList.toggle('modal-active');
+	});
+
+	// Handle dashboard button click
+	const dashboardButton = document.getElementById('dashboardButton');
+	dashboardButton.addEventListener('click', function () {
+		modal.classList.toggle('modal-active');
+
+		window.location.href = 'pages/dashboard.html';
+	});
 
 	e.target.reset();
 };
+
+// NOT WORK
+// $(document).ready(function () {
+// 	$('.display').DataTable({
+// 		ajax: './js/data.json',
+// 		columns: [
+// 			{ participants: 'id' },
+// 			{ participants: 'firstName' },
+// 			{ participants: 'lastName' },
+// 			{ participants: 'gender' },
+// 			{ participants: 'email' },
+// 			{ participants: 'address' },
+// 			{ participants: 'contactNumber' },
+// 		],
+// 	});
+// });
+
+// OBJECTS WITH DATA PROPERTY LIKE JSON =============
+// $(document).ready(function () {
+// 	$('.display').DataTable({
+// 		ajax: {
+// 			url: './js/data.json',
+// 			dataSrc: 'participants',
+// 		},
+// 		columns: [
+// 			{ data: 'id' },
+// 			{ data: 'firstName' },
+// 			{ data: 'lastName' },
+// 			{ data: 'gender' },
+// 			{ data: 'email' },
+// 			{ data: 'address' },
+// 			{ data: 'contactNumber' },
+// 		],
+// 	});
+// });
+
+// =============================
 
 function calculateAge(birthday) {
 	const birthDate = new Date(birthday);
@@ -124,7 +202,6 @@ const navLinks = document.querySelectorAll('ul li a');
 navLinks.forEach((link) => {
 	link.addEventListener('click', function (event) {
 		event.preventDefault();
-		console.log(this.getAttribute('href'));
 		const target = this.getAttribute('href');
 		smoothScroll(target);
 

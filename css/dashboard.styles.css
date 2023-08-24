@@ -1,0 +1,57 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.container button {
+	padding: 10px 15px;
+	align-self: center;
+	text-transform: uppercase;
+	background-color: #0e76bc;
+	color: #fff;
+	padding: 11px 25px;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 10px;
+	border: none;
+	border-radius: 2px;
+	letter-spacing: 0.5px;
+}
+
+.dashboard {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 14px;
+}
+
+.dashboard th,
+.dashboard td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+.dashboard th {
+	background-color: #f2f2f2;
+}
+
+.dashboard tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.dashboard tr:hover {
+	background-color: #ddd;
+}
+
+@media (max-width: 400px) {
+	.dashboard {
+		font-size: 12px; /* Adjust font size */
+	}
+
+	.dashboard th,
+	.dashboard td {
+		padding: 5px; /* Adjust cell padding */
+	}
+}
