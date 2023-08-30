@@ -11,6 +11,34 @@ const navigationMenu = document.querySelector('.navigation-menu');
 console.log(JSON.parse(localStorage.getItem('participants')));
 // localStorage.removeItem('participants');
 
+//
+const initialParticipants = [
+	{
+		id: 1,
+		name: 'Glydell Soriano',
+		age: 25,
+		gender: 'Female',
+		address: 'Brgy: Barat, Umingan, Pangasinan',
+		email: 'glydellsoriano@gmail.com',
+		contactNumber: '09555577788',
+		date: new Date(),
+	},
+	{
+		id: 2,
+		name: 'Mac Jones Soriano',
+		age: 22,
+		gender: 'Male',
+		address: 'Brgy: Barat, Umingan, Pangasinan',
+		email: 'sorianomacjones@gmail.com',
+		contactNumber: '09157904885',
+		date: new Date(),
+	},
+];
+
+if (!localStorage.getItem('participants')) {
+	localStorage.setItem('participants', JSON.stringify(initialParticipants));
+}
+//
 // Form functionality
 document.addEventListener('DOMContentLoaded', function () {
 	const dataForm = document.getElementById('dataForm');
@@ -20,22 +48,23 @@ document.addEventListener('DOMContentLoaded', function () {
 const submitForm = (e) => {
 	e.preventDefault();
 
-	if (!validateForm()) {
-		return;
-	}
-
 	const firstName = document.getElementById('firstName').value;
 	const lastName = document.getElementById('lastName').value;
 	const gender = document.getElementById('gender').value;
 	const shirtSize = document.getElementById('shirtSize').value;
 	const birthday = document.getElementById('birthday').value;
-
 	const address = document.getElementById('address').value;
 	const email = document.getElementById('email').value;
 	const contactNumber = document.getElementById('contactNumber').value;
 
 	const age = calculateAge(birthday);
 	const raceCategory = age <= 18 ? 'Junior' : 'Senior';
+
+	if (!validateForm()) {
+		return;
+	}
+
+	console.log(address, gender, email);
 
 	console.log(`${firstName} ${lastName}`);
 	console.log(age);
@@ -188,6 +217,12 @@ registrationIcon.addEventListener('click', () => {
 });
 
 // ================= Smooth scroll ============
+document
+	.querySelector('.registration-btn')
+	.addEventListener('click', function () {
+		smoothScroll('#registration-section');
+	});
+
 function smoothScroll(target) {
 	const element = document.querySelector(target);
 	if (element) {

@@ -25,27 +25,27 @@ export function validateForm() {
 		return false;
 	}
 
-	if (address === '') {
+	if (!address) {
 		alert('Address is required.');
 		return false;
 	}
 
-	if (email === '') {
+	if (!email) {
 		alert('Email Address is required.');
 		return false;
 	}
 
-	if (gender === '') {
+	if (!gender) {
 		alert('Gender is required.');
 		return false;
 	}
 
-	if (shirtSize === '') {
+	if (!shirtSize) {
 		alert('Shirt Size is required.');
 		return false;
 	}
 
-	if (birthday === '') {
+	if (!birthday) {
 		alert('Birthday is required.');
 		return false;
 	}
